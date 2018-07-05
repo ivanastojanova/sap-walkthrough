@@ -10,7 +10,7 @@ sap.ui.define([
 	return UIComponent.extend("Walkthrough.Component", {
 
 		 metadata : {
-		   // manifest: "json",
+		    manifest: "json",
 			rootView: {
 				"viewName": "Walkthrough.view.App",
 				"type": "XML",
