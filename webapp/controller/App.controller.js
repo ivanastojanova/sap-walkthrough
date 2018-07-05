@@ -1,11 +1,13 @@
 sap.ui.define([
    "sap/ui/core/mvc/Controller",
    "sap/m/MessageToast",
-   "sap/ui/model/json/JSONModel",
-   "sap/ui/model/resource/ResourceModel"
-], function (Controller,MessageToast, JSONModel, ResourceModel) {
+//   "sap/ui/model/json/JSONModel",
+//   "sap/ui/model/resource/ResourceModel"
+//], function (Controller,MessageToast, JSONModel, ResourceModel) {
+], function (Controller,MessageToast) {
    "use strict";
    return Controller.extend("Walkthrough.controller.App", {
+   	  /*
    	  onInit: function () {
          
          var JsonData = {
@@ -25,7 +27,7 @@ sap.ui.define([
          });
          
          this.getView().setModel(i18nModel, "i18n"); 
-   	  },
+   	  },*/
       onShowHello : function () {
          // show a native JavaScript alert
          /*MessageToast.show("Hello World");
