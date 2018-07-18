@@ -3,13 +3,8 @@
 	    <pages>
 	        <Page title="{i18n>homePageTitle}" id="__page0">
 	        	<content>
-	        		<Panel id="__panel1" class="sapUiResponsiveMargin" width="auto">
-	        			<content>
-	        		<Button text="{i18n>showHelloButtonText}" press="onShowHello" class="myCustomButton"/>
-					<Input width="60%" id="__input0" fieldWidth="60%" value="{/recipient/name}" valueLiveUpdate="true"/>
-	        			<FormattedText htmlText="Hello {/recipient/name}" class="sapUiSmallMargin sapThemeHighlight-asColor myCustomText"/>
-	        			</content>
-	        		</Panel>
+
+                    <mvc:XMLView viewName="Walkthrough.view.HelloPanel"/>
 	        	</content>
 	        </Page>
 	    </pages>
