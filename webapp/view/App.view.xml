@@ -8,7 +8,11 @@
 						press="onOpenDialog"/>
 				</headerContent>
 	        	<content>
+                    
                     <mvc:XMLView viewName="Walkthrough.view.HelloPanel"/>
+                    
+                    <mvc:XMLView viewName="Walkthrough.view.Invoices"/>
+
 	        	</content>
 	        </Page>
 	    </pages>
