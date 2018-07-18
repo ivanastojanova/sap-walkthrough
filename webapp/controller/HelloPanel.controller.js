@@ -14,7 +14,7 @@ sap.ui.define([
          
          var sRecipient = this.getView().getModel().getProperty("/recipient/name");
          
-         var sMsg = oBundle.getText("helloMsg", [sRecipient,'Ivana']);
+         var sMsg = oBundle.getText("helloMsg", [sRecipient,"Ivana"]);
          
          MessageToast.show(sMsg,{
 			    duration: 3000,                  // default
@@ -30,6 +30,23 @@ sap.ui.define([
 			    animationDuration: 1000,         // default
 			    closeOnBrowserNavigation: true   // default
 			});
-      }
+      },
+      onOpenDialog : function () {
+         var oView = this.getView();
+         
+         var oDialog = oView.byId("helloDialog");
+         // create dialog lazily
+         if (!oDialog) {
+            // create dialog via fragment factory
+            oDialog = sap.ui.xmlfragment(oView.getId(), "Walkthrough.view.HelloDialog",this);
+            oView.addDependent(oDialog);
+         }
+    	
+    	 oDialog.open();
+      },
+      
+		onCloseDialog : function () {
+			this.getView().byId("helloDialog").close();
+		}
 	});
 });

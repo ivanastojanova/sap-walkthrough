@@ -4,9 +4,10 @@
    xmlns:mvc="sap.ui.core.mvc">
 	        		<Panel id="__panel1" class="sapUiResponsiveMargin" width="auto">
 	        			<content>
+	        		<Button text="{i18n>openDialogButtonText}" press="onOpenDialog" class="sapUiSmallMarginEnd"/>
 	        		<Button text="{i18n>showHelloButtonText}" press="onShowHello" class="myCustomButton"/>
 					<Input width="60%" id="__input0" fieldWidth="60%" value="{/recipient/name}" valueLiveUpdate="true"/>
-	        			<FormattedText htmlText="Hello {/recipient/name}" class="sapUiSmallMargin sapThemeHighlight-asColor myCustomText"/>
+	        			<FormattedText htmlText="Hello {/recipient/name}" class="sapUiSmallMargin sapThemeHighlight-asColor myCustomText" id="FormatedText"/>
 	        			</content>
 	        		</Panel>
-</mvc:View>	        		
+</mvc:View>
