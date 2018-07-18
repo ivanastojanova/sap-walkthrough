@@ -31,7 +31,13 @@ sap.ui.define([
 			    closeOnBrowserNavigation: true   // default
 			});
       },
+      
       onOpenDialog : function () {
+			this.getOwnerComponent().openHelloDialog();
+		}
+		
+		
+      /*onOpenDialog : function () {
          var oView = this.getView();
          
          var oDialog = oView.byId("helloDialog");
@@ -42,11 +48,12 @@ sap.ui.define([
             oView.addDependent(oDialog);
          }
     	
+    	alert(app.toString());
     	 oDialog.open();
       },
       
 		onCloseDialog : function () {
 			this.getView().byId("helloDialog").close();
-		}
+		}*/
 	});
 });

@@ -3,8 +3,9 @@ sap.ui.define([
 	"sap/ui/Device",
 	"Walkthrough/model/models",
 	"sap/ui/model/json/JSONModel",
-    "sap/ui/model/resource/ResourceModel"
-], function(UIComponent, Device, models,  JSONModel, ResourceModel) {
+    "sap/ui/model/resource/ResourceModel",
+   	"Walkthrough/controller/HelloDialog"
+], function(UIComponent, Device, models,  JSONModel, ResourceModel, HelloDialog) {
 	"use strict";
 
 	return UIComponent.extend("Walkthrough.Component", {
@@ -52,7 +53,18 @@ sap.ui.define([
 			// set the device model
 			this.setModel(models.createDeviceModel(), "device");
 			
-			
+			// set dialog
+			this._helloDialog = new HelloDialog(this.getRootControl());
+		},
+
+
+		exit : function() {
+			this._helloDialog.destroy();
+			delete this._helloDialog;
+		},
+
+		openHelloDialog : function () {
+			this._helloDialog.openOne();
 		}
 	});
 });
