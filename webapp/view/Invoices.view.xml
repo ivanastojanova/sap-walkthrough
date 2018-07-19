@@ -1,8 +1,22 @@
 <mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="Walkthrough.controller.Invoices">
 
 
-  <List headerText="{i18n>invoiceListTitle}" class="sapUiResponsiveMargin" width="auto" items="{invoice>/Invoices}">
-      
+
+
+
+
+
+
+
+  <List headerText="{i18n>invoiceListTitle}" class="sapUiResponsiveMargin" width="auto" items="{invoice>/Invoices}" id="invoiceList">
+      <headerToolbar>
+         <Toolbar>
+            <Title text="{i18n>invoiceListTitle}"/>
+            <ToolbarSpacer/>
+            <SearchField width="30%" search="onFilterInvoices"/>
+         </Toolbar>
+      </headerToolbar> 
+  
       <items>
          <ObjectListItem title="{invoice>Quantity} x {invoice>ProductName}" number="{          parts: [{path: 'invoice>ExtendedPrice'}, {path: 'view_one>/currency'}],          type: 'sap.ui.model.type.Currency',          formatOptions: {     showMeasure: false    }          }" numberUnit="{view_one>/currency}" numberState="{= ${invoice>ExtendedPrice} &gt; 50 ? 'Error' : 'Success' }">
         	<firstStatus>
@@ -13,6 +27,11 @@
    
    
    </List>
+
+
+
+
+
 
 
 </mvc:View>
