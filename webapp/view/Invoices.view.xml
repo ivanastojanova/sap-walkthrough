@@ -2,13 +2,8 @@
 
 
 
-
-
-
-
-
-
-  <List headerText="{i18n>invoiceListTitle}" class="sapUiResponsiveMargin" width="auto" items="{invoice>/Invoices}" id="invoiceList">
+  <List headerText="{i18n>invoiceListTitle}" class="sapUiResponsiveMargin" width="auto" id="invoiceList"
+        items="{path:'invoice>/Invoices', sorter:{path:'ShipperName', group : true}}">
       <headerToolbar>
          <Toolbar>
             <Title text="{i18n>invoiceListTitle}"/>
