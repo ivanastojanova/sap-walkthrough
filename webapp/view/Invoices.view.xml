@@ -4,15 +4,11 @@
   <List headerText="{i18n>invoiceListTitle}" class="sapUiResponsiveMargin" width="auto" items="{invoice>/Invoices}">
       
       <items>
-         <ObjectListItem title="{invoice>Quantity} x {invoice>ProductName}" 
-         number="{
-         parts: [{path: 'invoice>ExtendedPrice'}, {path: 'view_one>/currency'}],
-         type: 'sap.ui.model.type.Currency',
-         formatOptions: {
-				showMeasure: false
-			}
-         }" 
-         numberUnit="{view_one>/currency}"/>
+         <ObjectListItem title="{invoice>Quantity} x {invoice>ProductName}" number="{          parts: [{path: 'invoice>ExtendedPrice'}, {path: 'view_one>/currency'}],          type: 'sap.ui.model.type.Currency',          formatOptions: {     showMeasure: false    }          }" numberUnit="{view_one>/currency}" numberState="{= ${invoice>ExtendedPrice} &gt; 50 ? 'Error' : 'Success' }">
+        	<firstStatus>
+					<ObjectStatus text="{       path: 'invoice>Status',       formatter: '.formatter.statusText'      }"/>
+			</firstStatus>
+         </ObjectListItem>
       </items>
    
    
