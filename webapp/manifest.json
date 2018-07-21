@@ -14,16 +14,15 @@
 			"version": "1.40.12"
 		},
 		"dataSources": {
-	      "invoiceRemote": {
-		  "uri": "https://services.odata.org/V2/Northwind/Northwind.svc/",
-		  "type": "OData",
-		  "settings": {
-		  "odataVersion": "2.0"
+			"invoiceRemote": {
+				"uri": "https://services.odata.org/V2/Northwind/Northwind.svc/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0"
+				}
+			}
 		}
-	  }
-	}
 	},
-
 	"sap.ui": {
 		"technology": "UI5",
 		"icons": {
@@ -39,13 +38,8 @@
 			"tablet": true,
 			"phone": true
 		},
-		"supportedThemes": [
-			"sap_hcb",
-			"sap_belize"
-
-		]
+		"supportedThemes": ["sap_hcb", "sap_belize"]
 	},
-
 	"sap.ui5": {
 		"rootView": {
 			"viewName": "Walkthrough.view.App",
@@ -74,9 +68,38 @@
 					"bundleName": "Walkthrough.i18n.i18n"
 				}
 			},
-		  "invoice": {
-			 "dataSource": "invoiceRemote"
-		  }			
+			"invoice": {
+				"dataSource": "invoiceRemote"
+			}
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "Walkthrough.view",
+				"controlId": "app",
+				"controlAggregation": "pages",
+				"async": true
+			},
+			"routes": [{
+				"pattern": "",
+				"name": "overview",
+				"target": "overview"
+			}, {
+				"pattern": "detail/{invoicePath}",
+				"name": "detail",
+				"target": "detail"
+			}],
+			"targets": {
+				"overview": {
+					"viewID": "overview",
+					"viewName": "Overview"
+				},
+				"detail": {
+					"viewId": "detail",
+					"viewName": "Detail"
+				}
+			}
 		},
 		"resources": {
 			"css": [{

@@ -42,6 +42,20 @@ sap.ui.define([
 			var oList = this.byId("invoiceList");
 			var oBinding = oList.getBinding("items");
 			oBinding.filter(aFilter);
+		},
+		
+		/** 
+		 * 
+		 * @param {sap.ui.core.UIComponent}  
+		 */
+		onPress: function (oEvent) {
+			
+			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			var oItem = oEvent.getSource();
+
+			oRouter.navTo("detail", {
+				invoicePath: oItem.getBindingContext("invoice").getPath().substr(1)
+			});
 		}
 		/**
 		 * Similar to onAfterRendering, but this hook is invoked before the controller's View is re-rendered

@@ -3,7 +3,7 @@
     {
       "filePath": "/webapp/index.html",
       "previewMode": 1,
-      "dataMode": 0,
+      "dataMode": 1,
       "workspace": "withoutWorkspace",
       "ui5ActiveVersion": null,
       "ui5VerSource": null,
@@ -20,7 +20,7 @@
         "id": 5038120,
         "runnerId": "webapprunner",
         "displayName": "Run index.html",
-        "lastRunTimeStamp": 1532164983304
+        "lastRunTimeStamp": 1532210242102
       }
     }
   ]

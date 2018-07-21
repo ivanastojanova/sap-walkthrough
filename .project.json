@@ -52,5 +52,10 @@
     "loadJSONFiles": false,
     "loadCustomRequests": false,
     "mockRequestsFilePath": ""
+  },
+  "dataBinding": {
+    "/webapp/view/Invoices.view.xml": {
+      "entitySet": "/Invoices"
+    }
   }
 }

@@ -1,9 +1,6 @@
 <mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="Walkthrough.controller.Invoices">
 
-
-
-  <List headerText="{i18n>invoiceListTitle}" class="sapUiResponsiveMargin" width="auto" id="invoiceList"
-        items="{path:'invoice>/Invoices', sorter:{path:'ShipperName', group : true}}">
+  <List headerText="{i18n>invoiceListTitle}" class="sapUiResponsiveMargin" width="auto" id="invoiceList" items="{path:'invoice>/Invoices', sorter:{path:'ShipperName', group : true}}">
   	
       <headerToolbar>
          <Toolbar>
@@ -14,20 +11,21 @@
       </headerToolbar> 
   
       <items>
-         <ObjectListItem title="{invoice>Quantity} x {invoice>ProductName}" number="{          parts: [{path: 'invoice>ExtendedPrice'}, {path: 'view_one>/currency'}],          type: 'sap.ui.model.type.Currency',          formatOptions: {     showMeasure: false    }          }" numberUnit="{view_one>/currency}" numberState="{= ${invoice>ExtendedPrice} &gt; 50 ? 'Error' : 'Success' }">
+         <ObjectListItem title="{invoice>Quantity} x {invoice>ProductName}" 
+                         number="{ parts: [{path: 'invoice>ExtendedPrice'}, {path: 'view_one>/currency'}],          
+                                   type: 'sap.ui.model.type.Currency',          
+                                   formatOptions: { showMeasure: false }}" 
+                         numberUnit="{view_one>/currency}" 
+                         numberState="{= ${invoice>ExtendedPrice} &gt; 50 ? 'Error' : 'Success' }"
+					     type="Navigation"
+					     press="onPress"                         
+                         >
         	<firstStatus>
 					<ObjectStatus text="{       path: 'invoice>Status',       formatter: '.formatter.statusText'      }"/>
 			</firstStatus>
          </ObjectListItem>
       </items>
    
-   
    </List>
-
-
-
-
-
-
 
 </mvc:View>
