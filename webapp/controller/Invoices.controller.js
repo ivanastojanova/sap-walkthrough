@@ -23,11 +23,17 @@ sap.ui.define([
 			},
 
 
+		/** 
+		 * 
+		 * @param {sap.ui.base.Event} oEvent
+		 */
 		onFilterInvoices : function (oEvent) {
 
 			// build filter array
 			var aFilter = [];
 			var sQuery = oEvent.getParameter("query");
+			
+
 			if (sQuery) {
 				aFilter.push(new Filter("ProductName", FilterOperator.StartsWith, sQuery));
 			}

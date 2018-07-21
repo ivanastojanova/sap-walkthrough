@@ -45,5 +45,12 @@
     "targetFolder": "dist",
     "excludedFolders": [],
     "excludedFiles": []
+  },
+  "mockpreview": {
+    "mockUri": "https://services.odata.org/V2/Northwind/Northwind.svc/",
+    "metadataFilePath": "localService/metadata.xml",
+    "loadJSONFiles": false,
+    "loadCustomRequests": false,
+    "mockRequestsFilePath": ""
   }
 }
